@@ -1,0 +1,32 @@
+ANOTAÇÕES
+
+=== PONTEIROS ===
+
+É uma variável especial dedicada a armazenar o endereço de memória de outra variável, não é possível armazenar outro conteúdo em um ponteiro.
+
+É possível salvar um ponteiro de outro ponteiro, sem limites.
+
+Endereços de variáveis sempre são identificadas em hexadecimal (exemplo: 000000DFED2FFC0E)
+
+Uma variável sempre irá ocupar apenas 1 endereço na memória
+
+Se minha máquina é de 64 bits, então o endereço será de 64 bits
+
+Formas de declarar ponteiros:
+
+int* var (popular dentre os programadores mais novos)
+int * var (evite, não é bem visto)
+int *var (popular pela velha guarda de programadores) (preferível)
+
+É de boa prática identificar que X variável é um ponteiro, o professor Manzano tem preferencia em colocar um p na frente da variável, por exemplo:
+
+int idade = 25;
+int *pidade = nullptr; // ponteiro da var idade
+
+Formas de informar de que um ponteiro está vazio
+
+*pi = nullptr; (forma moderna do C++)
+*pi = 0;
+*pi = NULL;
+
+Curiosidade: toda passagem de parâmetro por referencia é usado o ponteiro
