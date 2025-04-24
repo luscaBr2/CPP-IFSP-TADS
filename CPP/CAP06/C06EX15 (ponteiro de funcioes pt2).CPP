@@ -14,8 +14,16 @@ int32_t subtracao(int32_t a, int32_t b)
   return a - b;
 }
 
-int32_t operacao(int32_t (*funcao)(int32_t, int32_t), 
-  int32_t a, int32_t b) {
+/*
+recebe como parametro o ponteiro de uma função como parametro e usa para mudar seu
+proprio comportamento, então se a função operacao recebe como parametro "soma", ele pega o caminho da
+função soma e assume a forma da função
+*/
+int32_t operacao(
+  int32_t (*funcao)(int32_t, int32_t), // pega o caminho da função que recebeu
+  int32_t a,
+  int32_t b)
+{
   return funcao(a, b);
 }
 
