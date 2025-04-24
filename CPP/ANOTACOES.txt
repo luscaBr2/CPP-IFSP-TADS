@@ -30,3 +30,6 @@ Formas de informar de que um ponteiro está vazio
 *pi = NULL;
 
 Curiosidade: toda passagem de parâmetro por referencia é usado o ponteiro
+
+&var -> acesso ao endereço de "var"
+*var -> acesso ao conteúdo apontado por "var"
