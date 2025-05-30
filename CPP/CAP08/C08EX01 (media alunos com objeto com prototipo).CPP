@@ -1,4 +1,4 @@
-// C08EX02.CPP
+// C08EX01.CPP
 
 #include <iostream>
 #include <iomanip>
@@ -7,23 +7,25 @@
 
 using namespace std;
 
-class Aluno
+class Aluno // se trocar o class para struct funciona normalmente
 {
-  public:
-    string nome;
+  public: // pode ser usado private ou protected (encapsulamento)
+    string nome; // campo membro (unidade de armazenamento de uma classe)
     vector<float> nota;
     float media;
 
-    Aluno() : nota(4) {} 
-    float PoeMedia(void)
-    {
-      float soma = 0.0f;
-      for (float n : nota)
-        soma += n;
-      media = soma / nota.size();
-      return media;
-    }
+    Aluno() : nota(4) {}
+    float PoeMedia(void); // isso é um "protótipo"
 };
+
+float Aluno::PoeMedia(void)
+{
+  float soma = 0.0f;
+  for (float n : nota)
+    soma += n;
+  media = soma / nota.size();
+  return media;
+}
 
 int main(void)
 {

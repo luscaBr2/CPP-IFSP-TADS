@@ -1,4 +1,4 @@
-// C08EX01.CPP
+// C08EX02.CPP
 
 #include <iostream>
 #include <iomanip>
@@ -7,25 +7,27 @@
 
 using namespace std;
 
-class Aluno // se trocar o class para struct funciona normalmente
+class Aluno
 {
-  public: // pode ser usado private ou protected (encapsulamento)
-    string nome; // campo membro (unidade de armazenamento de uma classe)
-    vector<float> nota;
+  public:
+    string nome;
+    vector<float> nota; // não funciona colocar o tamanho aqui direto
+
+    // para inicializar o vector ja com a quantidade tem que ser assim:
+    //vector<float> nota{vector<float>(4)}; // Inicialização uniforme
+
     float media;
 
-    Aluno() : nota(4) {}
-    float PoeMedia(void);
+    Aluno() : nota(4) {} // Construtor que inicializa o vector com tamanho 4
+    float PoeMedia(void)
+    {
+      float soma = 0.0f;
+      for (float n : nota)
+        soma += n;
+      media = soma / nota.size();
+      return media;
+    }
 };
-
-float Aluno::PoeMedia(void)
-{
-  float soma = 0.0f;
-  for (float n : nota)
-    soma += n;
-  media = soma / nota.size();
-  return media;
-}
 
 int main(void)
 {

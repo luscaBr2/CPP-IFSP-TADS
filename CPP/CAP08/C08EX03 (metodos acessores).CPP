@@ -1,4 +1,4 @@
-// C08EX04.CPP
+// C08EX03.CPP
 
 #include <iostream>
 #include <iomanip>
@@ -7,22 +7,9 @@
 
 using namespace std;
 
-class Sala {
-  protected:
-    int32_t sala;
-
-  public:
-    void PoeSala(int32_t sala) {
-      this->sala = sala;
-    }
-
-    int32_t PegaSala() const {
-      return sala;
-    }
-};
-
-class Aluno : public Sala {
-  private:
+class Aluno
+{
+  private: // privado, ou seja, apenas essa classe e quem a instancia pode acessar esses campos
     string nome;
     vector<float> nota;
     float media;
@@ -36,41 +23,47 @@ class Aluno : public Sala {
     void PoeMedia(void);
     float PegaMedia(void) const;
 };
-
-void Aluno::PoeNome(string nome) {
+// void pois não retorna nada, apenas coloca, ou seja, é um procedimento
+void Aluno::PoeNome(string nome)
+{
   this->nome = nome;
 }
-
-string Aluno::PegaNome(void) const {
+// é uma função, pois retorna valor
+string Aluno::PegaNome(void) const
+{
   return nome;
 }
 
-void Aluno::PoeNota(char NT[6], int32_t pos) {
+void Aluno::PoeNota(char NT[6], int32_t pos)
+{
   nota[pos] = atof(NT);
 }
 
-float Aluno::PegaNota(int32_t pos) const {
+float Aluno::PegaNota(int32_t pos) const
+{
   return nota[pos];
 }
 
-void Aluno::PoeMedia(void) {
+void Aluno::PoeMedia(void)
+{
   media = 0;
   for (float n : nota)
     media += n;
   media /= nota.size();
 }
 
-float Aluno::PegaMedia(void) const {
+float Aluno::PegaMedia(void) const
+{
   return media;
 }
 
-int main(void) {
+int main(void)
+{
   cout << setprecision(2) << fixed;
 
   Aluno aluno;
   string nome;
   char entranota[6];
-  char entrasala[6];
 
   cout << "Cadastro de aluno" << endl;
   cout << endl;
@@ -78,15 +71,12 @@ int main(void) {
   cout << "Informe o nome.....: ";
   getline(cin, nome);
   aluno.PoeNome(nome);
-
-  cout << "Informe a sala.....: ";
-  cin.getline(entrasala, sizeof(entrasala));
-  aluno.PoeSala(atoi(entrasala));
   cout << endl;
 
   cout << "Informe as notas:" << endl;
   cout << endl;
-  for (size_t i = 0; i <= 3; ++i) {
+  for (size_t i = 0; i <= 3; ++i)
+  {
     cout << i + 1 << "a. nota...........: ";
     cin.getline(entranota, sizeof(entranota));
     aluno.PoeNota(entranota, i);
@@ -99,9 +89,9 @@ int main(void) {
   cout << "Relatorio" << endl;
   cout << endl;
   cout << "Nome..........: " << aluno.PegaNome() << endl;
-  cout << "Sala..........: " << aluno.PegaSala() << endl;
   cout << endl;
-  for (size_t i = 0; i <= 3; ++i) {
+  for (size_t i = 0; i <= 3; ++i)
+  {
     cout << i + 1 << "a. nota......: ";
     cout << setw(5) << aluno.PegaNota(i) << endl;
   }
