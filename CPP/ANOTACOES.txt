@@ -43,22 +43,3 @@ struct = estrutura (de dados)
 
 Equivalente as tabelas de banco de dados
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
