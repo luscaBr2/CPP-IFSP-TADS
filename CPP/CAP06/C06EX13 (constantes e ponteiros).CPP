@@ -20,7 +20,8 @@ int main(void)
 
   int32_t y = 5;
 
-  int32_t *const py = &y;
+  int32_t *const py = &y; // modo de deixar apenas o ponteiro constante, assim sendo impossível mudar o
+                          // caminho guardado pelo ponteiro (exemplo: py = &x; dará erro)
 
   *py = 15;
 

@@ -33,3 +33,13 @@ Curiosidade: toda passagem de parâmetro por referencia é usado o ponteiro
 
 &var -> acesso ao endereço de "var"
 *var -> acesso ao conteúdo apontado por "var"
+
+
+=== REGISTROS ===
+
+struct = estrutura (de dados)
+
+É um conjunto de dados que caracterizam um elemento
+
+Equivalente as tabelas de banco de dados
+

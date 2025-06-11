@@ -17,7 +17,7 @@ int32_t subtracao(int32_t a, int32_t b)
 int main(void)
 {
 
-  int32_t (*funcaoPont)(int32_t, int32_t);
+  int32_t (*funcaoPont)(int32_t, int32_t); // a partir do momento em que o ponteiro assume o endereço da memoria, tambem assume o comportamento, então pode ser usada como função
   int32_t resultado;
 
   funcaoPont = soma; // ou funcaoPont = &soma;
